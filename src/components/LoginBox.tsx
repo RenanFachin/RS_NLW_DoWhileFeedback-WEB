@@ -2,7 +2,7 @@ import { VscGithubInverted } from 'react-icons/vsc'
 
 export function LoginBox(){
     return(
-        <div className="h-screen w-full bg-black-500 bg-banner bg-no-repeat pt-[440px] px-20 text-center flex flex-col justify-center items-center">
+        <section className="h-screen w-full bg-black-500 bg-banner bg-no-repeat pt-[440px] px-20 text-center flex flex-col justify-center items-center">
             <strong className="text-4xl leading-tight">
                 Entre e compartilhe sua mensagem
             </strong>
@@ -14,6 +14,6 @@ export function LoginBox(){
                 <VscGithubInverted size={24} className="mr-4"/>
                 Entrar com Github
             </a>
-        </div>
+        </section>
     )
 }

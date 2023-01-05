@@ -39,7 +39,8 @@ module.exports = {
         'page': '1fr 453px'
       },
       backgroundImage: {
-        banner: "url('/src/assets/banner-girl.png')"
+        banner: "url('/src/assets/banner-girl.png')",
+        'nlw-gradient': 'linear-gradient(100deg, #ff008e 0%, #ffcd1e 100%)',
       }
     },
   },
