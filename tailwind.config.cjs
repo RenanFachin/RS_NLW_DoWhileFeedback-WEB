@@ -20,7 +20,8 @@ module.exports = {
         500: '#FFCD1E'
       },
       black: {
-        600: '#202024',
+        400: '#202024',
+        500: '#17171A',
         700: '#121214',
         900: '#09090A'
       },
@@ -33,6 +34,12 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: 'Roboto, sans-serif'
+      },
+      gridTemplateColumns: {
+        'page': '1fr 453px'
+      },
+      backgroundImage: {
+        banner: "url('/src/assets/banner-girl.png')"
       }
     },
   },
