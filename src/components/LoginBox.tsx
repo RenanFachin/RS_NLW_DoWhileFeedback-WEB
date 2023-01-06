@@ -1,6 +1,26 @@
+import { useEffect } from 'react'
 import { VscGithubInverted } from 'react-icons/vsc'
 
+import { githubOauthLogin } from '../utils/githubLogin'
+
 export function LoginBox(){
+    const signInUrl = githubOauthLogin
+
+    useEffect(() => {
+        // Verificando se existe o code= no link do usuário
+        const url = window.location.href;
+        const hasGithubCode = url.includes('?code=')
+
+        // Caso exista, quer dizer que o login dele está valido
+        if(hasGithubCode) {
+            // Fazendo a separação da url "crua" e do código vindo do github
+            const [urlWithoutCode, githubCode] = url.split('?code=')
+
+            console.log({urlWithoutCode, githubCode})
+        }
+
+    },[])
+    
     return(
         <section className="h-screen w-full bg-black-500 bg-banner bg-no-repeat pt-[440px] px-20 text-center flex flex-col justify-center items-center">
             <strong className="text-4xl leading-tight">
@@ -8,7 +28,7 @@ export function LoginBox(){
             </strong>
 
             <a 
-            href="#" 
+            href={signInUrl}
             className="bg-yellow-500 mt-8 px-10 h-14 text-black-900 text-sm font-bold uppercase flex justify-center items-center hover:filter hover:brightness-110 transition"
             >
                 <VscGithubInverted size={24} className="mr-4"/>
