@@ -11,7 +11,7 @@ export function LoginBox(){
     
     return(
         <section className="h-screen w-full bg-black-500 bg-banner bg-no-repeat pt-[440px] px-20 text-center flex flex-col justify-center items-center">
-            <Text className='leading-snug'size='lg'>
+            <Text className='leading-snug'size='md'>
                 Entre e compartilhe sua mensagem
             </Text>
 

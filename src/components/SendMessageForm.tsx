@@ -28,7 +28,7 @@ export function SendMessageForm() {
         setMessage('')
     }
 
-    return (
+    return (        
         <section className={`bg-black-300 p-6 self-center flex flex-col items-center text-center relative rounded-2xl`}>
 
             <SignOut onClick={signOut} />
@@ -59,10 +59,10 @@ export function SendMessageForm() {
             </header>
 
             <form
-                className='flex flex-col self-stretch mt-12 bg-black-400'
+                className='flex flex-col self-stretch mt-12 bg-black-400 rounded-b-xl'
                 onSubmit={handleSendMessage}
             >
-                <label htmlFor="message" className='p-5 text-xl bg-black-100 font-bold text-left'>
+                <label htmlFor="message" className='p-5 text-xl bg-black-100 font-bold text-left rounded-t-xl'>
                     Mensagem
                 </label>
 

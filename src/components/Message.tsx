@@ -10,7 +10,7 @@ interface MessageProps {
 
 export function Message({ text, user, ...rest }: MessageProps) {
     return (
-        <li className='max-w-[440px] [&:nth-child(2)]:ml-20' {...rest}>
+        <li className='max-w-[440px] [&:nth-child(2)]:ml-20 bg-black-300 rounded-2xl p-6' {...rest}>
             <Text size="base" asChild>
                 <p>{text}</p>
             </Text>

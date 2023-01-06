@@ -59,7 +59,7 @@ export function MessageList() {
                 alt="DoWhile 2021"
             />
 
-            <ul className='flex flex-col gap-10 flex-1 justify-center'>
+            <ul className='flex flex-col gap-10 flex-1 justify-center w-full'>
 
                 {messages.map(message => {
                     return(

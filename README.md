@@ -1,6 +1,15 @@
 <p align="center">
   <img alt="DoWhile Feedback" src="./src/assets/logo.svg">
 </p>
+<br>
+<br>
+
+<p align="center">
+  <img src="./src/assets/Home.png">
+</p>
+<br>
+<br>
+
 
 ## O que é?
 Projeto desenvolvido durante o NLW#07.
