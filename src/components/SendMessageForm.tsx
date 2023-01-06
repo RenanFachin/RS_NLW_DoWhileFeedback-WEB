@@ -27,7 +27,7 @@ export function SendMessageForm() {
     }
 
     return (
-        <section className="bg-black-300 p-6 self-center flex flex-col items-center text-center relative">
+        <section className={`bg-black-300 p-6 self-center flex flex-col items-center text-center relative`}>
 
             <SignOut onClick={signOut} />
 

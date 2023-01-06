@@ -9,7 +9,7 @@ export function App() {
   const { user } = useContext(AuthContext) 
 
   return (
-    <main className="max-w-7xl h-screen grid grid-cols-page gap-32 relative mx-auto">
+    <main className={`max-w-7xl h-screen grid grid-cols-page gap-32 relative mx-auto`}>
       <MessageList />
 
       { Boolean(user) ? <SendMessageForm /> : <LoginBox />} 
@@ -18,3 +18,4 @@ export function App() {
   )
 }
 
+ 

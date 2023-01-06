@@ -45,6 +45,7 @@ module.exports = {
       },
       backgroundImage: {
         banner: "url('/src/assets/banner-girl.png')",
+        bannerSignIn: "url('/src/assets/background.png')",
         'nlw-gradient': 'linear-gradient(100deg, #ff008e 0%, #ffcd1e 100%)',
       }
     },
