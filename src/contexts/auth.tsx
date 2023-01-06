@@ -12,6 +12,7 @@ type User = {
 type AuthContextData = {
     user: User | null; // Ou usuário existe ou não está autenticado
     signInUrl: string;
+    signOut: () => void;
 }
 
 export const AuthContext = createContext({} as AuthContextData)
@@ -57,6 +58,26 @@ export function AuthProvider({children}: AuthProvider){
 
     }
 
+    function signOut(){
+        setUser(null)
+        localStorage.removeItem('@dowhile:token')
+    }
+
+    useEffect(() => {
+        const token = localStorage.getItem('@dowhile:token')
+
+        if(token){
+            // Fazendo o envio do token pelo cabeçalho da requisição
+            api.defaults.headers.common.authorization = `Bearer ${token}`
+
+
+            api.get<User>('profile').then(response => {
+                setUser(response.data)
+            })
+        }
+    },[])
+
+
     useEffect(() => {
         // Verificando se existe o code= no link do usuário
         const url = window.location.href;
@@ -76,7 +97,7 @@ export function AuthProvider({children}: AuthProvider){
 
 
     return(
-        <AuthContext.Provider value={{signInUrl, user}}>
+        <AuthContext.Provider value={{signInUrl, user, signOut}}>
             {children}
         </AuthContext.Provider>
     )
