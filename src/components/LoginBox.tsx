@@ -1,25 +1,11 @@
-import { useEffect } from 'react'
+import { useContext } from 'react'
+import { AuthContext } from '../contexts/auth'
 import { VscGithubInverted } from 'react-icons/vsc'
 
-import { githubOauthLogin } from '../utils/githubLogin'
-
 export function LoginBox(){
-    const signInUrl = githubOauthLogin
+    const { signInUrl, user } = useContext(AuthContext)
 
-    useEffect(() => {
-        // Verificando se existe o code= no link do usuário
-        const url = window.location.href;
-        const hasGithubCode = url.includes('?code=')
-
-        // Caso exista, quer dizer que o login dele está valido
-        if(hasGithubCode) {
-            // Fazendo a separação da url "crua" e do código vindo do github
-            const [urlWithoutCode, githubCode] = url.split('?code=')
-
-            console.log({urlWithoutCode, githubCode})
-        }
-
-    },[])
+    console.log(user)
     
     return(
         <section className="h-screen w-full bg-black-500 bg-banner bg-no-repeat pt-[440px] px-20 text-center flex flex-col justify-center items-center">
