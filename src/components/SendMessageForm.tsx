@@ -5,15 +5,17 @@ import { SignOut } from './Buttons/SignOut';
 
 import { VscGithubInverted } from "react-icons/vsc";
 import { api } from '../services/api';
+import { SendMessageButton } from './Buttons/SendMessageButton';
+import { Text } from './Text';
 
 export function SendMessageForm() {
     const { user, signOut } = useContext(AuthContext)
     const [message, setMessage] = useState('')
 
-    async function handleSendMessage(e: FormEvent){
+    async function handleSendMessage(e: FormEvent) {
         e.preventDefault()
 
-        if(!message.trim()){
+        if (!message.trim()) {
             return;
         }
 
@@ -27,7 +29,7 @@ export function SendMessageForm() {
     }
 
     return (
-        <section className={`bg-black-300 p-6 self-center flex flex-col items-center text-center relative`}>
+        <section className={`bg-black-300 p-6 self-center flex flex-col items-center text-center relative rounded-2xl`}>
 
             <SignOut onClick={signOut} />
 
@@ -40,23 +42,24 @@ export function SendMessageForm() {
                     />
                 </div>
 
-                <strong
-                    className='text-2xl leading-7 mt-4'
-                >
+                <Text className='mt-4'>
                     {user?.name}
-                </strong>
+                </Text>
 
-                <span className='flex items-center mt-2 text-gray-100'>
-                    <VscGithubInverted
-                        className='mr-2'
-                        size={20}
-                    />
-                    {user?.login}
-                </span>
+                <Text asChild size='sm'>
+                    <span className='flex items-center mt-2 text-gray-100'>
+                        <VscGithubInverted
+                            className='mr-2'
+                            size={20}
+                        />
+                        {user?.login}
+                    </span>
+                </Text>
+                
             </header>
 
-            <form 
-                className='flex flex-col self-stretch mt-12 bg-black-400' 
+            <form
+                className='flex flex-col self-stretch mt-12 bg-black-400'
                 onSubmit={handleSendMessage}
             >
                 <label htmlFor="message" className='p-5 text-xl bg-black-100 font-bold text-left'>
@@ -72,9 +75,10 @@ export function SendMessageForm() {
                     value={message}
                 />
 
-                <button type='submit' className='bg-pink-500 m-6 px-8 h-10 self-end cursor-pointer text-white text-sm font-bold border-none uppercase flex justify-center items-center hover:filter hover:brightness-90 transition'>
-                    Enviar mensagem
-                </button>
+                <SendMessageButton
+                    type='submit'
+                    title='Enviar mensagem'
+                />
             </form>
         </section>
     )

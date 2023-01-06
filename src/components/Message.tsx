@@ -1,3 +1,5 @@
+import { Text } from "./Text";
+
 interface MessageProps {
     text: string;
     user: {
@@ -9,9 +11,10 @@ interface MessageProps {
 export function Message({ text, user, ...rest }: MessageProps) {
     return (
         <li className='max-w-[440px] [&:nth-child(2)]:ml-20' {...rest}>
-            <p className='text-xl leading-7'>
-                {text}
-            </p>
+            <Text size="base" asChild>
+                <p>{text}</p>
+            </Text>
+
             <div className='mt-4 flex items-center'>
                 <div className='p-[2px] bg-nlw-gradient rounded-[50%] leading-none'>
                     <img
@@ -21,9 +24,12 @@ export function Message({ text, user, ...rest }: MessageProps) {
                     />
                 </div>
 
-                <span className='text-base ml-3'>
-                    {user.name}
-                </span>
+                <Text size="sm" className='ml-3' asChild>
+                    <span>
+                        {user.name}
+                    </span>
+                </Text>
+
             </div>
         </li>
     )

@@ -1,6 +1,8 @@
 import { useContext } from 'react'
 import { AuthContext } from '../contexts/auth'
-import { VscGithubInverted } from 'react-icons/vsc'
+
+import { SignIn } from './Buttons/SignIn'
+import { Text } from './Text'
 
 export function LoginBox(){
     const { signInUrl } = useContext(AuthContext)
@@ -9,17 +11,14 @@ export function LoginBox(){
     
     return(
         <section className="h-screen w-full bg-black-500 bg-banner bg-no-repeat pt-[440px] px-20 text-center flex flex-col justify-center items-center">
-            <strong className="text-4xl leading-tight">
+            <Text className='leading-snug'size='lg'>
                 Entre e compartilhe sua mensagem
-            </strong>
+            </Text>
 
-            <a 
-            href={signInUrl}
-            className="bg-yellow-500 mt-8 px-10 h-14 text-black-900 text-sm font-bold uppercase flex justify-center items-center hover:filter hover:brightness-90 transition"
-            >
-                <VscGithubInverted size={24} className="mr-4"/>
-                Entrar com Github
-            </a>
+            <SignIn 
+                title='Entrar com Github'
+                href={signInUrl}
+            />
         </section>
     )
 }
