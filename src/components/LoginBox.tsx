@@ -3,9 +3,9 @@ import { AuthContext } from '../contexts/auth'
 import { VscGithubInverted } from 'react-icons/vsc'
 
 export function LoginBox(){
-    const { signInUrl, user } = useContext(AuthContext)
+    const { signInUrl } = useContext(AuthContext)
 
-    console.log(user)
+
     
     return(
         <section className="h-screen w-full bg-black-500 bg-banner bg-no-repeat pt-[440px] px-20 text-center flex flex-col justify-center items-center">
@@ -15,7 +15,7 @@ export function LoginBox(){
 
             <a 
             href={signInUrl}
-            className="bg-yellow-500 mt-8 px-10 h-14 text-black-900 text-sm font-bold uppercase flex justify-center items-center hover:filter hover:brightness-110 transition"
+            className="bg-yellow-500 mt-8 px-10 h-14 text-black-900 text-sm font-bold uppercase flex justify-center items-center hover:filter hover:brightness-90 transition"
             >
                 <VscGithubInverted size={24} className="mr-4"/>
                 Entrar com Github
